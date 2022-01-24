@@ -10,7 +10,8 @@ sudo yum install -y yum-utils
 sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
 sudo yum install vagrant -y
 vagrant init
-# Change in Vagrantfile: config.vm.box = "hashicorp/bionic64"
+#Change in Vagrantfile: 
+sed -i 's/config.vm.box = "base"/config.vm.box = "hashicorp\/bionic64"/' Vagrantfile
 
 # Might need to install 
 sudo dnf install akmod-VirtualBox kernel-devel-4.18.0-348.2.1.el8_5.x86_64
@@ -20,8 +21,7 @@ sudo systemctl restart vboxdrv.service
 # Installation of VirtualBox
 sudo yum install VirtualBox
 
-# Test that Vagrant runs correctly
+# Start the Vagrant box Vagrant
 vagrant up
-vagrant ssh
 
 # Installation of Ansible
