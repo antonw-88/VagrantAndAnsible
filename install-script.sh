@@ -16,15 +16,23 @@ sudo dnf install akmod-VirtualBox kernel-devel-4.18.0-348.2.1.el8_5.x86_64
 sudo akmods --kernels 4.18.0-348.2.1.el8_5.x86_64 
 sudo systemctl restart vboxdrv.service
 #Initialize Vagrantfile
-vagrant init
+vagrant init #hashicorp/bionic64
 
 # Installation of VirtualBox
 sudo yum install VirtualBox
+# List of Vagrant boxes: https://app.vagrantup.com/boxes/search
 
 # Installation of Ansible
+# https://docs.ansible.com/
 # https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-rhel-centos-or-fedora
 sudo yum install epel-release
 sudo yum install ansible
 
 # Start the Vagrant box
 vagrant up
+# Enter the box with $ vagrant ssh
+
+
+# Additional relevant sources:
+# how to use Vagrant and Ansible together: https://docs.ansible.com/ansible/2.4/guide_vagrant.html
+# tutorial: https://www.middlewareinventory.com/blog/vagrant-ansible-example/
