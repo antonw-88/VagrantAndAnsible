@@ -1,0 +1,18 @@
+# Ansible master server
+[master]
+192.168.60.4
+
+# App servers
+[apps]
+192.168.60.5
+192.168.60.6
+
+# All servers
+[multi:children]
+master
+apps
+
+# Variables applied to all servers
+[multi:vars]
+ansible_user=vagrant
+ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
