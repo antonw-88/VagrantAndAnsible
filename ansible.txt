@@ -1,5 +1,0 @@
-https://www.youtube.com/user/geerlingguy
-
-ansible -i inventory multi -a "free -h"
-ansible -i inventory db -m setup (video 02 -38.00)
-ansible example -a "free -h" -u centos

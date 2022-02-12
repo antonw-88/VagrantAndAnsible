@@ -1,6 +1,17 @@
 ---
-- hosts: all
+- hosts: master
   become: yes
+
+  vars_files:
+    - vars/vars.yml
+
+  pre_tasks:
+    - name: Update apt cache if needed.
+      apt: update_cache=yes cache_valid_time=3600
+
+  handlers:
+    - name: restart service
+      service: name=service state=restarted
 
   tasks:
     - name: install prerequisites
@@ -24,5 +35,6 @@
         - docker-ce-cli
         - containerd.io
         update_cache: yes
+        # notify: restart service
     - name: add userpermissions
       shell: "usermod -aG docker vagrant"

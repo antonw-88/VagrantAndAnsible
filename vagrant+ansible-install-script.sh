@@ -12,7 +12,6 @@ sudo yum install yum-utils -y
 sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo -y
 sudo yum install vagrant -y
 
-
 # Installation of VirtualBox
 sudo dnf install gcc make perl kernel-devel kernel-headers bzip2 dkms -y
 sudo dnf update kernel-*
